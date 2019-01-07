@@ -7,13 +7,12 @@ using UnityEngine;
 
 public class C_Movement : MonoBehaviour
 {
-    public enum MovementType { FreeMovement, TargetingMovement }
-
-    public MovementType movementType;
     public float floorOffsetY;
     public float moveSpeed = 6f;
     public float sprintSpeed = 9f;
-    public float rotateSpeed = 10f;
+    public float dodgeSpeed = 12f;
+    public float movementRotateSpeed = 10f;
+    public float attackRotateSpeed = 15f;
     public float deadZone = .2f;
 
     Rigidbody rb;
@@ -37,12 +36,6 @@ public class C_Movement : MonoBehaviour
 
     private void Update()
     {
-        // get movement type based on whether we are L-Targeting or not
-        if (_cI.lTargeting)
-            movementType = MovementType.TargetingMovement;
-        else
-            movementType = MovementType.FreeMovement;
-
         // reset movement
         moveDirection = Vector3.zero;
         // get vertical and horizontal movement input (controller and WASD/ Arrow Keys)
@@ -60,19 +53,17 @@ public class C_Movement : MonoBehaviour
 
         // make sure the input doesnt go negative or above 1;
         float inputMagnitude = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
-        inputAmount = Mathf.Clamp01(inputMagnitude);
+        //inputAmount = Mathf.Clamp01(inputMagnitude);
+        inputAmount = _cI.leftStickMagnitude;
 
         // don't move if we're in the stick's deadzone
         if (inputAmount < deadZone)
             inputAmount = 0f;
 
-        // if we are in free movement rotate player to movement direction
-        if(movementType == MovementType.FreeMovement)
-        {
-            Quaternion rot = Quaternion.LookRotation(moveDirection);
-            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * inputAmount * rotateSpeed);
-            transform.rotation = targetRotation;
-        }
+        // rotate player to movement direction
+        Quaternion rot = Quaternion.LookRotation(moveDirection);
+        Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * inputAmount * movementRotateSpeed);
+        transform.rotation = targetRotation;
     }
 
 

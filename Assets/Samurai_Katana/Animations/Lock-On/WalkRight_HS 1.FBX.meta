@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 003a08d898e7a8544a5a1455649aa411
-timeCreated: 1491646085
+guid: f36a062e50e79834fae6c35af383dccd
+timeCreated: 1491647141
 licenseType: Store
 ModelImporter:
   serializedVersion: 19
@@ -77,10 +77,10 @@ ModelImporter:
     100138: RightThumb3
     100140: RightToe
     100142: RightUpLeg
-    100144: //RootNode
-    100146: Spine
-    100148: Sword_Hold
-    100150: Sword_Hold_Bone
+    100144: Spine
+    100146: Sword_Hold
+    100148: Sword_Hold_Bone
+    100150: //RootNode
     400000: Bip001 Footsteps
     400002: Bip001 HeadNub
     400004: Bip001 L Finger0Nub
@@ -153,17 +153,17 @@ ModelImporter:
     400138: RightThumb3
     400140: RightToe
     400142: RightUpLeg
-    400144: //RootNode
-    400146: Spine
-    400148: Sword_Hold
-    400150: Sword_Hold_Bone
+    400144: Spine
+    400146: Sword_Hold
+    400148: Sword_Hold_Bone
+    400150: //RootNode
     4300000: Body
     4300002: Fingers
     4300004: Joint
     4300006: Sword_Hold
     4300008: BladeL
     4300010: BladeR
-    7400000: RunRight_HS
+    7400000: WalkRight_HS
     9500000: //RootNode
     13700000: BladeL
     13700002: BladeR
@@ -193,18 +193,18 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: RunRight_HS
+      name: WalkRight_HS
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0

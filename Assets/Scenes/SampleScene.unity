@@ -281,11 +281,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e129f92b3c1256c4784464d1abb7a182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftStickVParam: Left Stick Horizontal
-  leftStickHParam: Left Stick Vertical
+  leftStickHParam: Left Stick Horizontal
+  leftStickVParam: Left Stick Vertical
   leftStickMagParam: Left Stick Magnitude
+  leftStickAngleParam: Left Stick Angle
   lTargetingParam: L Targeting
-  movementDampening: 0.05
+  dodgeParam: Dodge
+  freeMovementDamping: 0.05
+  animationState: 0
 --- !u!136 &705322828
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -328,11 +331,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e403baa8a4e7244c8a998db511500a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementType: 0
-  floorOffsetY: 0
+  floorOffsetY: 0.05
   moveSpeed: 6
   sprintSpeed: 9
-  rotateSpeed: 10
+  dodgeSpeed: 12
+  movementRotateSpeed: 10
+  attackRotateSpeed: 15
   deadZone: 0.2
 --- !u!114 &705322831
 MonoBehaviour:
@@ -349,9 +353,24 @@ MonoBehaviour:
   leftStickHorizontal: 0
   leftStickVertical: 0
   leftStickMagnitude: 0
+  leftStickAngle: 0
   leftTrigger: 0
+  dodge: 0
   lTargetingThreshold: 0.2
   lTargeting: 0
+--- !u!114 &705322832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705322824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce46d0cbf8613bf4895b98bf23210856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAtThis: {fileID: 0}
 --- !u!1 &1293238081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1240,10 @@ PrefabInstance:
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700002, guid: 8afe723514f619143a45ea089476b2cc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8afe723514f619143a45ea089476b2cc, type: 3}
 --- !u!43 &1777236412
@@ -1229,7 +1252,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-137384
+  m_Name: pb_Mesh8452
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a2d50de8f2027a4081bb103e255bee1
+guid: ea14eb189c14f8746b663fdf990491e9
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -161,7 +161,7 @@ ModelImporter:
     4300006: Sword_Hold
     4300008: BladeL
     4300010: BladeR
-    7400000: WalkRight_HS_Start
+    7400000: WalkBackwardRight_HS C
     9500000: //RootNode
     13700000: BladeL
     13700002: BladeR
@@ -218,20 +218,20 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkRight_HS_Start
+      name: WalkBackwardRight_HS C
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 74
+      lastFrame: 60
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: 45
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
