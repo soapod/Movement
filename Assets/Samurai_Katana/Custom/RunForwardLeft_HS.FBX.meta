@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8fa7173ad3b969a4aa01a33dabad56a5
+guid: e14aa0e94ac47494c908a218ceb65019
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -75,10 +75,10 @@ ModelImporter:
     100138: RightThumb3
     100140: RightToe
     100142: RightUpLeg
-    100144: Spine
-    100146: Sword_Hold
-    100148: Sword_Hold_Bone
-    100150: //RootNode
+    100144: //RootNode
+    100146: Spine
+    100148: Sword_Hold
+    100150: Sword_Hold_Bone
     400000: Bip001 Footsteps
     400002: Bip001 HeadNub
     400004: Bip001 L Finger0Nub
@@ -151,17 +151,17 @@ ModelImporter:
     400138: RightThumb3
     400140: RightToe
     400142: RightUpLeg
-    400144: Spine
-    400146: Sword_Hold
-    400148: Sword_Hold_Bone
-    400150: //RootNode
+    400144: //RootNode
+    400146: Spine
+    400148: Sword_Hold
+    400150: Sword_Hold_Bone
     4300000: Body
     4300002: Fingers
     4300004: Joint
     4300006: Sword_Hold
     4300008: BladeL
     4300010: BladeR
-    7400000: WalkForwardLeft_HS C
+    7400000: RunForwardLeft_HS
     9500000: //RootNode
     13700000: BladeL
     13700002: BladeR
@@ -218,12 +218,12 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WalkForwardLeft_HS C
+      name: RunForwardLeft_HS
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 36
       wrapMode: 0
-      orientationOffsetY: 45
+      orientationOffsetY: -45
       level: 0
       cycleOffset: 0
       loop: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 86f3d911696c3df45828aa2a79b8ec09
+guid: a5bd6205521fc4e4bbca1dde6ab641b7
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -161,7 +161,7 @@ ModelImporter:
     4300006: Sword_Hold
     4300008: BladeL
     4300010: BladeR
-    7400000: RunBackwardRight_HS C
+    7400000: RunBackwardRight_HS
     9500000: //RootNode
     13700000: BladeL
     13700002: BladeR
@@ -218,7 +218,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RunBackwardRight_HS C
+      name: RunBackwardRight_HS
       takeName: Take 001
       firstFrame: 0
       lastFrame: 36

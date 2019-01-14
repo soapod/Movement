@@ -6,16 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(C_Animation))]
 [RequireComponent(typeof(Rigidbody))]
 
-public class C_Movement : MonoBehaviour
+public class C_RootAnimationMovement : MonoBehaviour
 {
     public float floorOffsetY;
-    public float moveSpeed = 6f;
-    public float sprintSpeed = 9f;
-    public float dodgeSpeedFactor = 1.5f;
-    public float movementRotateSpeed = 10f;
-    public bool onLedge;
-    public GameObject lockOnObject;
-    public bool lockOn;
 
     C_Input _cI;
     C_Animation _cA;
@@ -29,8 +22,6 @@ public class C_Movement : MonoBehaviour
     Vector3 gravity;
     Vector3 combinedRaycast;
 
-    Vector3 _dodgeDirection;
-
 
     // Use this for initialization
     void Start()
@@ -40,10 +31,12 @@ public class C_Movement : MonoBehaviour
         _cA = GetComponent<C_Animation>();
     }
 
+
     private void Update()
     {
         // reset movement
         moveDirection = Vector3.zero;
+
         // get vertical and horizontal movement input (controller and WASD/ Arrow Keys)
         vertical = _cI.leftStickVertical;
         horizontal = _cI.leftStickHorizontal;
@@ -51,8 +44,8 @@ public class C_Movement : MonoBehaviour
         // base movement on camera
         Vector3 correctedVertical = vertical * Camera.main.transform.forward;
         Vector3 correctedHorizontal = horizontal * Camera.main.transform.right;
-
         Vector3 combinedInput = correctedHorizontal + correctedVertical;
+
         // normalize so diagonal movement isnt twice as fast, clear the Y so your character doesnt try to
         // walk into the floor/ sky when your camera isn't level
         moveDirection = new Vector3((combinedInput).normalized.x, 0, (combinedInput).normalized.z);
@@ -65,14 +58,6 @@ public class C_Movement : MonoBehaviour
         // don't move if we're in the stick's deadzone
         if (inputAmount < _cI.deadZone)
             inputAmount = 0f;
-
-        // rotate player to movement direction
-        //if (!lockOn)
-        //{
-        //    Quaternion rot = Quaternion.LookRotation(moveDirection);
-        //    Quaternion targetRotation = Quaternion.Slerp(transform.rotation, rot, Time.fixedDeltaTime * inputAmount * movementRotateSpeed);
-        //    transform.rotation = targetRotation;
-        //}
     }
 
 
@@ -85,7 +70,7 @@ public class C_Movement : MonoBehaviour
         }
 
         // actual movement of the rigidbody + extra down force
-        else rb.velocity = (moveDirection * moveSpeed  * inputAmount) + gravity;
+        //else rb.velocity = (moveDirection * moveSpeed  * inputAmount) + gravity;
 
 
         // find the Y position via raycasts
@@ -111,10 +96,6 @@ public class C_Movement : MonoBehaviour
 
         combinedRaycast = FloorRaycasts(0, 0, 1.6f);
         floorAverage += (getFloorAverage(raycastWidth, 0) + getFloorAverage(-raycastWidth, 0) + getFloorAverage(0, raycastWidth) + getFloorAverage(0, -raycastWidth));
-
-        if (floorAverage <= 4)
-            onLedge = true;
-        else onLedge = false;
 
         return combinedRaycast / floorAverage;
     }
